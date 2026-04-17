@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: black;
+  background: #FFF8F1;
   box-sizing: border-box;
 
   &__logo {
@@ -44,7 +44,7 @@
   &__nav-link {
     font-size: 0.9375rem;
     font-weight: 500;
-    color: white;
+    color: black;
     text-decoration: none;
     transition: color 0.2s ease;
 

@@ -1,4 +1,49 @@
 // home-component specific styles
 .home-page-title {
-  color: white;
+  margin-bottom: 8px;
+  color: #810100;
+  font-family: "Satoshi Variable";
+  font-size: 96px;
+  line-height: normal;
+  letter-spacing: 1.92px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+
+.home-image-placeholder {
+  position: relative;
+  width: 100vw;
+  height: 50vw;
+  margin-left: calc(-1 * var(--page-padding-x));
+  background-color: #D9D9D9;
+}
+
+.home-image-text {
+  position: absolute;
+  bottom: var(--page-padding-x);
+  left: var(--page-padding-x);
+  width: 33%;
+  color: #FFF8F1;
+  font-family: "Satoshi Variable";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.home-projects-heading {
+  display: block;
+  width: 20%;
+  max-width: 100%;
+  margin: 40px auto 0;
+}
+
+.home-page-subheading {
+  color: #000;
+  font-family: "Satoshi Variable";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
