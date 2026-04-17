@@ -22,7 +22,7 @@ export class HomeComponent implements AfterViewInit {
 
     const rect = el.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
-    const progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.6)));
+    const progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.9)));
 
     // 100% = full container content width (between paddings), always correct at any screen size
     el.style.width = `${10 + 200 * progress}%`;

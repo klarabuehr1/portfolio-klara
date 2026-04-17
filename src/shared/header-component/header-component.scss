@@ -1,3 +1,6 @@
+@use '../shared-styles' as *;
+
+
 .header {
   display: flex;
   align-items: center;
@@ -29,7 +32,8 @@
   }
 
   &__logo-text {
-    fill: white;
+    color: $color-red;
+    fill: $color-red;
     font-size: 14px;
     font-family: sans-serif;
     font-weight: 700;
