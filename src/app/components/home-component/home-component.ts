@@ -1,9 +1,10 @@
 import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {PageContainerComponent} from '../../../shared/page-container-component/page-container-component';
+import {ButtonComponent} from '../../../shared/button-component/button-component';
 
 @Component({
   selector: 'app-home',
-  imports: [PageContainerComponent],
+  imports: [PageContainerComponent, ButtonComponent],
   templateUrl: './home-component.html',
   styleUrl: './home-component.scss',
 })
