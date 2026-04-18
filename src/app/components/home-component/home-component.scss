@@ -76,6 +76,11 @@
   gap: 0; // No gap between elements
 }
 
+.home-projects-section-reversed .home-project-content {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .home-project-description {
   color: $color-red;
   font-family: $base-font-family;
