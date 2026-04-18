@@ -51,6 +51,13 @@
   background-color: rgb(73, 73, 73);
 }
 
+.home-image-placeholder-2-right-aligned {
+  width: 60vw;
+  height: 40vw;
+  margin-right: calc(-1 * var(--page-padding-x));
+  background-color: rgb(73, 73, 73);
+}
+
 .home-projects-section {
   display: flex;
   flex-direction: row;
@@ -65,6 +72,7 @@
 .home-project-content {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
   gap: 0; // No gap between elements
 }
 
