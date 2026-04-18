@@ -10,6 +10,7 @@ import {ButtonComponent} from '../../../shared/button-component/button-component
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('projectsHeading') projectsHeading!: ElementRef<HTMLImageElement>;
+  @ViewChild('letsWorkTogetherHeading') letsWorkTogetherHeading!: ElementRef<HTMLImageElement>;
 
   ngAfterViewInit() {
     this.updateWidth();
@@ -20,7 +21,11 @@ export class HomeComponent implements AfterViewInit {
   @HostListener('window:scroll')
   @HostListener('window:resize')
   updateWidth() {
-    const el = this.projectsHeading?.nativeElement;
+    this.updateSVGWidth(this.projectsHeading?.nativeElement);
+    this.updateSVGWidth(this.letsWorkTogetherHeading?.nativeElement);
+  }
+
+  private updateSVGWidth(el: HTMLImageElement | undefined) {
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
@@ -35,3 +40,4 @@ export class HomeComponent implements AfterViewInit {
     el.style.marginBottom = `-${svgHeight}/2px`;
   }
 }
+
