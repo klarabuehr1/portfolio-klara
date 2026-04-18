@@ -19,7 +19,7 @@
   width: 100vw;
   height: 50vw;
   margin-left: calc(-1 * var(--page-padding-x));
-  background-color: $background-color;
+  background-color: rgb(73, 73, 73);
 }
 
 .home-image-text {
@@ -28,11 +28,11 @@
   left: var(--page-padding-x);
   width: 33%;
   color: #FFF8F1;
-  font-family: "Satoshi Variable";
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-family: $base-font-family;
+  font-size: $heading-medium-font-size;
+  font-style: $base-font-style;
+  font-weight: $heading-medium-font-weight;
+  line-height: $base-line-height;
 }
 
 .home-projects-heading {
@@ -47,7 +47,38 @@
   height: 40vw;
   margin-left: calc(-1 * var(--page-padding-x));
   margin-top: 80px;
-  background-color: $background-color;
+  background-color: rgb(73, 73, 73);
+}
+
+.home-projects-section {
+  display: flex;
+  align-items: center;
+  gap: 20px; // Optional gap between image and description
+}
+
+.home-project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; // Optional gap between title and subtitle
+}
+
+.home-project-description {
+  color: #810100;
+  font-family: $base-font-family;
+  font-size: $heading-large-font-size;
+  font-style: $base-font-style;
+  font-weight: $heading-large-font-weight;
+  line-height: $base-line-height;
+}
+
+.home-project-subtitle {
+  width: 500px;
+  color: #000;
+  font-family: $base-font-family;
+  font-size: $heading-medium-font-size;
+  font-style: $base-font-style;
+  font-weight: $heading-medium-font-weight;
+  line-height: $base-line-height;
 }
 
 .home-page-subheading {
