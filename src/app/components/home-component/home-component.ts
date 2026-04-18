@@ -13,6 +13,8 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.updateWidth();
+    // Small delay to ensure image is loaded before measuring
+    setTimeout(() => this.updateWidth(), 100);
   }
 
   @HostListener('window:scroll')
@@ -27,5 +29,9 @@ export class HomeComponent implements AfterViewInit {
 
     // 100% = full container content width (between paddings), always correct at any screen size
     el.style.width = `${10 + 200 * progress}%`;
+
+    // Measure the SVG height and apply negative margin-bottom to prevent layout shift
+    const svgHeight = el.offsetHeight;
+    el.style.marginBottom = `-${svgHeight}/2px`;
   }
 }
