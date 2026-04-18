@@ -39,27 +39,32 @@
   display: block;
   width: 20%;
   max-width: 100%;
-  margin: 120px auto 0;
+  margin: 120px auto 0 auto;
+  margin-bottom: 100px;
+  transition: width 0.4s ease;
 }
 
 .home-image-placeholder-2 {
   width: 60vw;
   height: 40vw;
   margin-left: calc(-1 * var(--page-padding-x));
-  margin-top: 80px;
   background-color: rgb(73, 73, 73);
 }
 
 .home-projects-section {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 20px; // Optional gap between image and description
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+  height: 40vw;
 }
 
 .home-project-content {
   display: flex;
   flex-direction: column;
-  gap: 10px; // Optional gap between title and subtitle
+  gap: 0; // No gap between elements
 }
 
 .home-project-description {
@@ -69,6 +74,7 @@
   font-style: $base-font-style;
   font-weight: $heading-large-font-weight;
   line-height: $base-line-height;
+  margin-bottom: 0; // No margin below title
 }
 
 .home-project-subtitle {
@@ -79,6 +85,8 @@
   font-style: $base-font-style;
   font-weight: $heading-medium-font-weight;
   line-height: $base-line-height;
+  margin-top: 0; // No margin above subtitle
+  margin-bottom: 25px; // 25px margin below subtitle before button
 }
 
 .home-page-subheading {
