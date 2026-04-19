@@ -3,6 +3,11 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
+}
+
+router-outlet + app-footer {
+  margin-top: auto;
 }

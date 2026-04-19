@@ -1,0 +1,30 @@
+@use '../shared-styles' as *;
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem var(--page-padding-x);
+  width: 100%;
+  border-top: 1px solid $border-color;
+  background: $background-color;
+  box-sizing: border-box;
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer__copyright-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.footer__copyright-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
