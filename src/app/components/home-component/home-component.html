@@ -46,7 +46,7 @@
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="home-contact-form">
       <div class="home-form-row">
         <div class="home-form-group">
-          <label for="firstName" class="home-form-label">First name</label>
+          <label for="firstName" class="home-form-label">First name*</label>
           <input 
             id="firstName"
             type="text" 
@@ -56,7 +56,7 @@
           />
         </div>
         <div class="home-form-group">
-          <label for="lastName" class="home-form-label">Surname</label>
+          <label for="lastName" class="home-form-label">Surname*</label>
           <input 
             id="lastName"
             type="text" 
@@ -68,7 +68,7 @@
       </div>
 
       <div class="home-form-group">
-        <label for="email" class="home-form-label">Email</label>
+        <label for="email" class="home-form-label">Email*</label>
         <input 
           id="email"
           type="email" 
@@ -79,7 +79,7 @@
       </div>
 
       <div class="home-form-group">
-        <label for="message" class="home-form-label">Message</label>
+        <label for="message" class="home-form-label">Message*</label>
         <textarea 
           id="message"
           formControlName="message" 
