@@ -35,4 +35,8 @@ export class RouterService {
   navigateToImpressum(): Promise<boolean> {
     return this.#router.navigate([ROUTES.impressum]);
   }
+
+  navigateToDatenschutz(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.datenschutz]);
+  }
 }

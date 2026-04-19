@@ -15,4 +15,8 @@ export class FooterComponent {
   protected navigateToImpressum() {
     this.routerService.navigateToImpressum();
   }
+
+  protected navigateToDatenschutz() {
+    this.routerService.navigateToDatenschutz();
+  }
 }

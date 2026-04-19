@@ -6,4 +6,5 @@ export const ROUTES = {
   contact: 'contact',
   settings: 'settings',
   impressum: 'impressum',
+  datenschutz: 'datenschutz',
 };
