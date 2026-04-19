@@ -31,4 +31,8 @@ export class RouterService {
   navigateToSettings(): Promise<boolean> {
     return this.#router.navigate([ROUTES.settings]);
   }
+
+  navigateToImpressum(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.impressum]);
+  }
 }

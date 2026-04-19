@@ -5,4 +5,5 @@ export const ROUTES = {
   cv: 'cv',
   contact: 'contact',
   settings: 'settings',
+  impressum: 'impressum',
 };
