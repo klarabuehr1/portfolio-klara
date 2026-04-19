@@ -3,7 +3,7 @@
 
 // home-component specific styles
 .home-page-title {
-  margin-bottom: 8px;
+  margin-bottom: -20px;
   color: $color-red;
   font-family: "Satoshi Variable";
   font-size: 96px;
@@ -11,6 +11,15 @@
   letter-spacing: 1.92px;
   font-style: normal;
   font-weight: 900;
+}
+
+.home-page-subheading {
+  color: #000;
+  font-family: "Satoshi Variable";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 
@@ -33,6 +42,44 @@
   font-style: $base-font-style;
   font-weight: $heading-medium-font-weight;
   line-height: $base-line-height;
+}
+
+.home-projects-heading-container {
+  height: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    height: 200px;
+  }
+}
+
+.home-lets-work-together-container {
+  height: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    height: 160px;
+  }
+
+  @media (max-width: 768px) {
+    height: 120px;
+  }
+
+  @media (max-width: 480px) {
+    height: 80px;
+  }
 }
 
 .home-projects-heading {
@@ -101,15 +148,6 @@
   line-height: $base-line-height;
   margin-top: 0; // No margin above subtitle
   margin-bottom: 25px; // 25px margin below subtitle before button
-}
-
-.home-page-subheading {
-  color: #000;
-  font-family: "Satoshi Variable";
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .home-contact-form-section {
