@@ -12,6 +12,7 @@ import {ButtonComponent} from '../../../shared/button-component/button-component
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('projectsHeading') projectsHeading!: ElementRef<HTMLImageElement>;
+  @ViewChild('aboutMeHeading') aboutMeHeading!: ElementRef<HTMLImageElement>;
   @ViewChild('letsWorkTogetherHeading') letsWorkTogetherHeading!: ElementRef<HTMLImageElement>;
 
   contactForm!: FormGroup;
@@ -40,6 +41,7 @@ export class HomeComponent implements AfterViewInit {
   @HostListener('window:resize')
   updateWidth() {
     this.updateSVGWidth(this.projectsHeading?.nativeElement);
+    this.updateSVGWidth(this.aboutMeHeading?.nativeElement);
     this.updateSVGWidth(this.letsWorkTogetherHeading?.nativeElement);
   }
 
