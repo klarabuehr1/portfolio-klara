@@ -51,6 +51,7 @@ export class HomeComponent implements AfterViewInit {
     const progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.9)));
 
     el.style.width = `${10 + 200 * progress}%`;
+    el.style.opacity = `${0.3 + 0.7 * progress}`;
 
     const svgHeight = el.offsetHeight;
     el.style.marginBottom = `-${svgHeight}/2px`;

@@ -3,7 +3,8 @@
 
 // home-component specific styles
 .home-page-title {
-  margin-bottom: 0px;
+  margin-bottom: -10px;
+  margin-left:  -4px;
   color: $color-red;
   font-family: "Satoshi Variable";
   font-size: 60px;
@@ -11,15 +12,6 @@
   letter-spacing: 1.92px;
   font-style: normal;
   font-weight: 900;
-}
-
-.home-page-subheading {
-  color: #000;
-  font-family: "Satoshi Variable";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 
@@ -85,10 +77,11 @@
 .home-projects-heading {
   display: block;
   width: 20%;
+  opacity: 0.3;
   max-width: 100%;
   margin: 120px auto 0 auto;
   margin-bottom: 100px;
-  transition: width 0.4s ease;
+  transition: width 0.3s ease, opacity 0.2s ease;
 }
 
 .home-image-placeholder-2 {
@@ -96,6 +89,8 @@
   height: 40vw;
   margin-left: calc(-1 * var(--page-padding-x));
   background-color: rgb(73, 73, 73);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .home-image-placeholder-2-right-aligned {
@@ -103,6 +98,8 @@
   height: 40vw;
   margin-right: calc(-1 * var(--page-padding-x));
   background-color: rgb(73, 73, 73);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .home-projects-section {
@@ -178,15 +175,15 @@
   font-family: $base-font-family;
   font-size: 16px;
   font-style: $base-font-style;
-  font-weight: 600;
+  font-weight: 700;
   line-height: $base-line-height;
 }
 
 .home-form-input,
 .home-form-textarea {
   padding: 12px 16px;
-  border: 1px solid $border-color; // Light gray border
-  border-radius: 8px;
+  border: 2px solid $border-color; 
+  border-radius: 25px;
   font-family: $base-font-family;
   font-size: 16px;
   font-style: $base-font-style;
@@ -207,6 +204,10 @@
   }
 }
 
+.home-form-input {
+  height: 48px;
+}
+
 .home-form-textarea {
   min-height: 150px;
   resize: vertical;
@@ -223,18 +224,20 @@
   margin-top: 20px;
   height: 48px;
   padding: 10px 40px;
-  background: $color-red;
-  color: $white-text-color;
-  border: none;
+  background: transparent;
+  color: $color-red;
+  border: 2px solid $color-red;
   border-radius: 100px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
   font-family: $base-font-family;
   font-size: 24px;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 
   &:hover:not(:disabled) {
+    background: $color-red;
+    color: $white-text-color;
     opacity: 0.9;
   }
 
@@ -248,6 +251,6 @@
   text-align: center;
   color: $color-red;
   font-family: $base-font-family;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
 }

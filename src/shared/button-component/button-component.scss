@@ -3,19 +3,26 @@
 .shared-button {
   display: inline-flex;
   height: 48px;
-  padding: 10px 40px;
+  padding: 10px 30px;
+  margin-left: -3px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 100px;
-  background: $color-red;
+  background: transparent;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
-  color: $white-text-color;
-  border: none;
+  color: $color-red;
+  border: 2px solid $color-red;
   cursor: pointer;
   font-family: $base-font-family;
   font-size: 24px;
   font-style: $base-font-style;
   font-weight: 700;
   line-height: $base-line-height;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: $color-red;
+    color: $white-text-color;
+  }
 }
