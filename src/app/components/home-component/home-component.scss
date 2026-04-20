@@ -88,6 +88,13 @@
   margin-top: -100px;
 }
 
+.home-about-section {
+  display: flex;
+  align-items: stretch;
+  gap: 50px;
+  margin-bottom: 120px;
+}
+
 .home-image-placeholder-2 {
   width: 60vw;
   height: 40vw;
@@ -104,6 +111,55 @@
   background-color: rgb(73, 73, 73);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+
+.home-about-image-placeholder {
+  width: 60vw;
+  height: 40vw;
+  margin-left: calc(-1 * var(--page-padding-x));
+  background-color: rgb(73, 73, 73);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.home-about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 28px;
+  height: 40vw;
+  flex: 1;
+  padding-right: var(--page-padding-x);
+}
+
+.home-about-text {
+  max-width: 560px;
+}
+
+.home-about-text p {
+  margin: 0 0 28px;
+  color: #000;
+  font-family: $base-font-family;
+  font-size: $heading-medium-font-size;
+  font-style: $base-font-style;
+  font-weight: $heading-medium-font-weight;
+  line-height: 1.4;
+}
+
+.home-about-text p:last-child {
+  margin-bottom: 2vh;
+}
+
+.home-about-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-about-icon {
+  display: block;
+  height: 36px;
+  width: auto;
 }
 
 .home-projects-section {
@@ -257,4 +313,67 @@
   font-family: $base-font-family;
   font-size: 16px;
   font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .home-about-section {
+    gap: 32px;
+  }
+
+  .home-about-image-placeholder,
+  .home-about-content {
+    height: 400px;
+  }
+
+  .home-about-text p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-about-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .home-about-image-placeholder {
+    width: 70vw;
+    height: 300px;
+  }
+
+  .home-about-content {
+    height: 300px;
+    gap: 20px;
+    padding-right: 0;
+  }
+
+  .home-about-text {
+    max-width: none;
+  }
+
+  .home-about-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-about-image-placeholder {
+    width: 78vw;
+    height: 220px;
+  }
+
+  .home-about-content {
+    height: 220px;
+    gap: 16px;
+  }
+
+  .home-about-text p {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .home-about-icon {
+    height: 28px;
+  }
 }
