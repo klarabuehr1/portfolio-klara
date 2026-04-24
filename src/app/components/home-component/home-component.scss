@@ -146,11 +146,10 @@
 .home-about-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 28px;
   height: 40vw;
   flex: 1;
-  padding-right: var(--page-padding-x);
 }
 
 .home-about-text {
