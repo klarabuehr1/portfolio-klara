@@ -16,16 +16,16 @@
   <div class="home-projects-section">
     <div class="home-image-placeholder-2"></div>
     <div class="home-project-content">
-      <div class="home-project-description">MACRO TO MICRO</div>
-      <p class="home-project-subtitle">An interactive exhibit that shows how microplastics enter the human body through various routes.</p>
+      <div class="home-project-description" appReveal>MACRO TO MICRO</div>
+      <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An interactive exhibit that shows how microplastics enter the human body through various routes.</p>
       <app-button (pressed)="navigateToMacroToMicro()"></app-button>
     </div>
   </div>
 
     <div class="home-projects-section home-projects-section-reversed">
     <div class="home-project-content">
-      <div class="home-project-description">WOCY</div>
-      <p class="home-project-subtitle">A wearable device and an app for tracking and understanding hormonal changes, with a focus on menopause.</p>
+      <div class="home-project-description" appReveal>WOCY</div>
+      <p class="home-project-subtitle" appReveal [appRevealDelay]="100">A wearable device and an app for tracking and understanding hormonal changes, with a focus on menopause.</p>
       <app-button (pressed)="navigateToWocy()"></app-button>
     </div>
     <div class="home-image-placeholder-2-right-aligned"></div>
@@ -34,16 +34,16 @@
     <div class="home-projects-section">
     <div class="home-image-placeholder-2"></div>
     <div class="home-project-content">
-      <div class="home-project-description">DRYVE</div>
-      <p class="home-project-subtitle">An experimental one-handed controller for a mobile robot, rethinking conventional controller concepts.</p>
+      <div class="home-project-description" appReveal>DRYVE</div>
+      <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An experimental one-handed controller for a mobile robot, rethinking conventional controller concepts.</p>
       <app-button (pressed)="navigateToDryve()"></app-button>
     </div>
   </div>
 
       <div class="home-projects-section home-projects-section-reversed">
     <div class="home-project-content">
-      <div class="home-project-description">SALT.</div>
-      <p class="home-project-subtitle">An experimental device designed to operate a salt mill by replicating the imperfect, human motion of seasoning.</p>
+      <div class="home-project-description" appReveal>SALT.</div>
+      <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An experimental device designed to operate a salt mill by replicating the imperfect, human motion of seasoning.</p>
       <app-button (pressed)="navigateToSalt()"></app-button>
     </div>
     <div class="home-image-placeholder-2-right-aligned"></div>
@@ -55,10 +55,10 @@
     <div class="home-about-image-placeholder"></div>
     <div class="home-about-content">
       <div class="home-about-text">
-        <p>Hey I’m <span class="home-about-name">KLARA</span></p>
-        <p>I’m an interaction design student at the HfG Schwäbisch Gmünd.</p>
-        <p>In my free time, I play football, read, and explore creativity in different forms. I’m also involved in a youth organization, where I take on responsibility and contribute as part of a team.</p>
-        <p>I learn quickly, adapt easily, and approach problems through clear and logical thinking.</p>
+        <p appReveal>Hey I'm <span class="home-about-name">KLARA</span></p>
+        <p appReveal [appRevealDelay]="100">I'm an interaction design student at the HfG Schwäbisch Gmünd.</p>
+        <p appReveal [appRevealDelay]="200">In my free time, I play football, read, and explore creativity in different forms. I'm also involved in a youth organization, where I take on responsibility and contribute as part of a team.</p>
+        <p appReveal [appRevealDelay]="300">I learn quickly, adapt easily, and approach problems through clear and logical thinking.</p>
       </div>
       <div class="home-about-icons">
         <a href="mailto:buehrklara@gmail.com" aria-label="E-Mail an Klara senden">

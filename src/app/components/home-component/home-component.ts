@@ -4,10 +4,11 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {PageContainerComponent} from '../../../shared/page-container-component/page-container-component';
 import {ButtonComponent} from '../../../shared/button-component/button-component';
 import {RouterService} from '../../services/router.service';
+import {RevealDirective} from '../../../shared/reveal-directive/reveal.directive';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, PageContainerComponent, ButtonComponent, ReactiveFormsModule],
+  imports: [CommonModule, PageContainerComponent, ButtonComponent, ReactiveFormsModule, RevealDirective],
   templateUrl: './home-component.html',
   styleUrl: './home-component.scss',
 })

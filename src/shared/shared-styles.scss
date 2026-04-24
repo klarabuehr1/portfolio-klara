@@ -25,3 +25,16 @@ $heading-large-font-weight: 700;
 $heading-medium-font-size: 24px;
 $heading-medium-font-weight: 400;
 
+// ── Text reveal animation ─────────────────────────────────────────────────────
+// Applied automatically by RevealDirective. The directive wraps the host in
+// an overflow:hidden container; the host slides up from below the clip border.
+.reveal-content {
+  transform: translateY(110%);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+
+  &--visible {
+    transform: translateY(0);
+  }
+}
+
