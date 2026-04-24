@@ -62,6 +62,29 @@ export class HeaderComponent {
     this.routerService.navigateToHome();
   }
 
+  protected scrollToTop(): void {
+    if (!this.isOnHomeRoute()) {
+      this.routerService.navigateToHome().then(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+    } else {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  }
+
+  protected scrollToSection(sectionId: string): void {
+    const scroll = () => {
+      const el = document.getElementById(sectionId);
+      el?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    };
+
+    if (!this.isOnHomeRoute()) {
+      this.routerService.navigateToHome().then(() => setTimeout(scroll, 100));
+    } else {
+      scroll();
+    }
+  }
+
   protected navigateToProjects() {
     this.routerService.navigateToProjects();
   }
