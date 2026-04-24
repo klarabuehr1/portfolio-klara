@@ -14,6 +14,9 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('projectsHeading') projectsHeading!: ElementRef<HTMLImageElement>;
   @ViewChild('aboutMeHeading') aboutMeHeading!: ElementRef<HTMLImageElement>;
   @ViewChild('letsWorkTogetherHeading') letsWorkTogetherHeading!: ElementRef<HTMLImageElement>;
+  @ViewChild('heroScrollContainer') heroScrollContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('heroTitle') heroTitle!: ElementRef<HTMLElement>;
+  @ViewChild('heroText') heroText!: ElementRef<HTMLElement>;
 
   contactForm!: FormGroup;
   isSubmitting = false;
@@ -37,12 +40,33 @@ export class HomeComponent implements AfterViewInit {
     setTimeout(() => this.updateWidth(), 100);
   }
 
+  private readonly HERO_ANIMATION_SCROLL_DISTANCE = 400;
+
   @HostListener('window:scroll')
   @HostListener('window:resize')
   updateWidth() {
     this.updateSVGWidth(this.projectsHeading?.nativeElement);
     this.updateSVGWidth(this.aboutMeHeading?.nativeElement);
     this.updateSVGWidth(this.letsWorkTogetherHeading?.nativeElement);
+    this.updateHeroAnimation();
+  }
+
+  private updateHeroAnimation() {
+    const container = this.heroScrollContainer?.nativeElement;
+    const title = this.heroTitle?.nativeElement;
+    const text = this.heroText?.nativeElement;
+    if (!container || !title || !text) return;
+
+    const scrolled = -container.getBoundingClientRect().top;
+    const progress = Math.max(0, Math.min(1, scrolled / this.HERO_ANIMATION_SCROLL_DISTANCE));
+
+    // Phase 1: title slides up out of clip container (progress 0 → 0.6)
+    const titleProgress = Math.min(1, progress / 0.6);
+    title.style.transform = `translateY(${-titleProgress * title.offsetHeight}px)`;
+
+    // Phase 2: text fades in (progress 0.6 → 1)
+    const textProgress = Math.max(0, (progress - 0.6) / 0.4);
+    text.style.opacity = `${textProgress}`;
   }
 
   private updateSVGWidth(el: HTMLImageElement | undefined) {

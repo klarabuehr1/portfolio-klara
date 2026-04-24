@@ -1,9 +1,13 @@
 <app-page-container>
-  <div class="home-image-placeholder">
-    <div class="home-image-copy">
-      <h1 class="shared-page-title home-page-title">Hello, I’m Klara</h1>
-      <p class="home-image-text">I'm interested in how people interact with systems, both physical and digital.
-        My work focuses on making these interactions clear, understandable, and intuitive.</p>
+  <div #heroScrollContainer class="hero-scroll-container">
+    <div class="home-image-placeholder">
+      <div class="home-image-copy">
+        <div class="home-title-clip">
+          <h1 #heroTitle class="shared-page-title home-page-title">Hello, I’m Klara</h1>
+        </div>
+        <p #heroText class="home-image-text">I’m interested in how people interact with systems, both physical and digital.
+          My work focuses on making these interactions clear, understandable, and intuitive.</p>
+      </div>
     </div>
   </div>
   <div class="home-projects-heading-container">

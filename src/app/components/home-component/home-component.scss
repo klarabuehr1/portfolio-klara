@@ -2,9 +2,17 @@
 
 
 // home-component specific styles
+.hero-scroll-container {
+  position: relative;
+  height: calc(50vw + 400px);
+  margin-top: calc(-1 * var(--header-height));
+}
+
 .home-image-copy {
-  padding-top: var(--page-padding-x);
-  padding-left: var(--page-padding-x);
+  position: absolute;
+  bottom: var(--page-padding-x);
+  left: var(--page-padding-x);
+  width: 33%;
 }
 
 .home-page-title {
@@ -18,29 +26,35 @@
   letter-spacing: 1.92px;
   font-style: normal;
   font-weight: 900;
+  will-change: transform;
 }
 
 
 .home-image-placeholder {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100vw;
   height: 50vw;
   margin-left: calc(-1 * var(--page-padding-x));
   background-color: rgb(73, 73, 73);
-  margin-top: calc(-1 * var(--header-height));
+}
+
+.home-title-clip {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .home-image-text {
-  position: absolute;
-  bottom: var(--page-padding-x);
-  left: var(--page-padding-x);
-  width: 33%;
   color: $white-text-color;
   font-family: $base-font-family;
   font-size: $heading-medium-font-size;
   font-style: $base-font-style;
   font-weight: $heading-medium-font-weight;
   line-height: $base-line-height;
+  opacity: 0;
+  will-change: opacity;
 }
 
 .home-projects-heading-container {
