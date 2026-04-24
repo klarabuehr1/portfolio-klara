@@ -2,10 +2,16 @@
 
 
 // home-component specific styles
+.home-image-copy {
+  padding-top: var(--page-padding-x);
+  padding-left: var(--page-padding-x);
+}
+
 .home-page-title {
+  margin-top: 0;
   margin-bottom: -10px;
-  margin-left:  -4px;
-  color: $color-red;
+  margin-left: 0;
+  color: $white-text-color;
   font-family: "Satoshi Variable";
   font-size: 60px;
   line-height: normal;
@@ -21,6 +27,7 @@
   height: 50vw;
   margin-left: calc(-1 * var(--page-padding-x));
   background-color: rgb(73, 73, 73);
+  margin-top: calc(-1 * var(--header-height));
 }
 
 .home-image-text {

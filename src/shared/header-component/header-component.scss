@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  background: $background-color;
+  background: transparent;
   box-sizing: border-box;
 
   &__logo {
@@ -55,6 +55,15 @@
     &:hover {
       color: var(--color-accent, $color-red);
     }
+  }
+}
+
+.header--light-nav-links .header__nav-link {
+  color: $white-text-color;
+
+  &:hover {
+    color: $white-text-color;
+    opacity: 0.85;
   }
 }
 
