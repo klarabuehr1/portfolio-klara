@@ -12,10 +12,6 @@ export class RouterService {
     return this.#router.navigate([ROUTES.home]);
   }
 
-  navigateToProjects(): Promise<boolean> {
-    return this.#router.navigate([ROUTES.projects]);
-  }
-
   navigateToMacroToMicro(): Promise<boolean> {
     return this.#router.navigate([ROUTES.macroToMicro]);
   }
@@ -30,22 +26,6 @@ export class RouterService {
 
   navigateToSalt(): Promise<boolean> {
     return this.#router.navigate([ROUTES.salt]);
-  }
-
-  navigateToAbout(): Promise<boolean> {
-    return this.#router.navigate([ROUTES.about]);
-  }
-
-  navigateToCV(): Promise<boolean> {
-    return this.#router.navigate([ROUTES.cv]);
-  }
-
-  navigateToContact(): Promise<boolean> {
-    return this.#router.navigate([ROUTES.contact]);
-  }
-
-  navigateToSettings(): Promise<boolean> {
-    return this.#router.navigate([ROUTES.settings]);
   }
 
   navigateToImpressum(): Promise<boolean> {
