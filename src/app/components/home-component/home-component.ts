@@ -102,9 +102,6 @@ export class HomeComponent implements AfterViewInit {
 
     el.style.width = `${10 + 200 * progress}%`;
     el.style.opacity = `${0.3 + 0.7 * progress}`;
-
-    const svgHeight = el.offsetHeight;
-    el.style.marginBottom = `-${svgHeight}/2px`;
   }
 
   onSubmit() {
