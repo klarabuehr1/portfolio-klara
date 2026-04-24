@@ -324,12 +324,13 @@
   font-size: 24px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  transition: background-color $hover-duration ease, color $hover-duration ease, opacity $hover-duration ease, transform $hover-duration ease;
 
   &:hover:not(:disabled) {
     background: $color-red;
     color: $white-text-color;
     opacity: 0.9;
+    transform: scale($hover-button-scale);
   }
 
   &:disabled {
