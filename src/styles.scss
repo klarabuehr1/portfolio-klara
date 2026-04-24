@@ -32,14 +32,9 @@ body {
   cursor: none;
 }
 
-a,
-button,
-[role="button"],
-input,
-textarea,
-select,
-label,
-[tabindex] {
-  cursor: none;
+*,
+*::before,
+*::after {
+  cursor: none !important;
 }
 
