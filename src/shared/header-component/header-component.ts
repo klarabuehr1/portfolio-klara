@@ -85,24 +85,4 @@ export class HeaderComponent {
     }
   }
 
-  protected navigateToProjects() {
-    this.routerService.navigateToProjects();
-  }
-
-  protected navigateToAbout() {
-    this.routerService.navigateToAbout();
-  }
-
-  protected navigateToCV() {
-    this.routerService.navigateToCV();
-  }
-
-  protected navigateToContact() {
-    this.routerService.navigateToContact();
-  }
-
-  protected navigateToSettings() {
-    this.routerService.navigateToSettings();
-  }
-
 }
