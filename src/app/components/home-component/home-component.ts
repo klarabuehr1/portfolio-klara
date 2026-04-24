@@ -24,6 +24,7 @@ export class HomeComponent implements AfterViewInit {
   isSubmitting = false;
   submitMessage = '';
   private readonly routerService = inject(RouterService);
+  private heroTitleRevealed = false;
 
   constructor(private fb: FormBuilder) {
     this.initializeForm();
@@ -39,8 +40,27 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    this.revealHeroTitle();
     this.updateWidth();
     setTimeout(() => this.updateWidth(), 100);
+  }
+
+  private revealHeroTitle(): void {
+    const title = this.heroTitle?.nativeElement;
+    if (!title) return;
+
+    // Set starting position without transition so browser paints it first
+    title.style.transform = 'translateY(110%)';
+
+    // Give the browser one full frame to render the start state, then animate
+    setTimeout(() => {
+      title.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+      title.style.transform = 'translateY(0)';
+      title.addEventListener('transitionend', () => {
+        title.style.transition = '';
+        this.heroTitleRevealed = true;
+      }, {once: true});
+    }, 50);
   }
 
   private readonly HERO_ANIMATION_SCROLL_DISTANCE = 400;
@@ -55,6 +75,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   private updateHeroAnimation() {
+    if (!this.heroTitleRevealed) return;
     const container = this.heroScrollContainer?.nativeElement;
     const title = this.heroTitle?.nativeElement;
     const text = this.heroText?.nativeElement;
@@ -67,9 +88,9 @@ export class HomeComponent implements AfterViewInit {
     const titleProgress = Math.min(1, progress / 0.6);
     title.style.transform = `translateY(${-titleProgress * title.offsetHeight}px)`;
 
-    // Phase 2: text fades in (progress 0.6 → 1)
+    // Phase 2: text slides up into clip container (progress 0.6 → 1)
     const textProgress = Math.max(0, (progress - 0.6) / 0.4);
-    text.style.opacity = `${textProgress}`;
+    text.style.transform = `translateY(${(1 - textProgress) * 110}%)`;
   }
 
   private updateSVGWidth(el: HTMLImageElement | undefined) {

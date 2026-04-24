@@ -30,6 +30,7 @@
 }
 
 
+
 .home-image-placeholder {
   position: sticky;
   top: 0;
@@ -46,6 +47,10 @@
   left: 0;
 }
 
+.home-image-text-clip {
+  overflow: hidden;
+}
+
 .home-image-text {
   color: $white-text-color;
   font-family: $base-font-family;
@@ -53,8 +58,8 @@
   font-style: $base-font-style;
   font-weight: $heading-medium-font-weight;
   line-height: $base-line-height;
-  opacity: 0;
-  will-change: opacity;
+  transform: translateY(110%);
+  will-change: transform;
 }
 
 .home-projects-heading-container {
