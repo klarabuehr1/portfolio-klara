@@ -1,0 +1,26 @@
+$cursor-size: 14px;
+$cursor-size-enlarged: 26px;
+$cursor-color: #fff;
+$cursor-border-width: 1.5px;
+$cursor-transition: width 0.15s ease, height 0.15s ease, transform 0.15s ease;
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $cursor-size;
+  height: $cursor-size;
+  border-radius: 50%;
+  border: $cursor-border-width solid $cursor-color;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: $cursor-transition;
+  z-index: 99999;
+  mix-blend-mode: difference;
+
+  &--enlarged {
+    width: $cursor-size-enlarged;
+    height: $cursor-size-enlarged;
+  }
+}

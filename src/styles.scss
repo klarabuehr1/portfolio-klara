@@ -29,5 +29,17 @@ body {
   height: 100%;
   font-family: 'Satoshi', sans-serif;
   background: #FFF8F1;
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+input,
+textarea,
+select,
+label,
+[tabindex] {
+  cursor: none;
 }
 
