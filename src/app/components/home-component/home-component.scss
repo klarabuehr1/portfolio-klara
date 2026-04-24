@@ -17,7 +17,6 @@
 
 .home-page-title {
   margin-top: 0;
-  margin-bottom: -10px;
   margin-left: 0;
   color: $white-text-color;
   font-family: "Satoshi Variable";
@@ -63,40 +62,34 @@
 }
 
 .home-projects-heading-container {
-  height: 50vw;
+  height: auto;
+  padding: 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1024px) {
-    height: 400px;
-  }
-
   @media (max-width: 768px) {
-    height: 300px;
+    padding: 40px 0;
   }
 
   @media (max-width: 480px) {
-    height: 200px;
+    padding: 24px 0;
   }
 }
 
 .home-lets-work-together-container {
-  height: 20vw;
+  height: auto;
+  padding: 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1024px) {
-    height: 160px;
-  }
-
   @media (max-width: 768px) {
-    height: 120px;
+    padding: 40px 0;
   }
 
   @media (max-width: 480px) {
-    height: 80px;
+    padding: 24px 0;
   }
 }
 
@@ -105,20 +98,14 @@
   width: 20%;
   opacity: 0.3;
   max-width: 100%;
-  margin: 120px auto 0 auto;
-  margin-bottom: 100px;
   transition: width 0.3s ease, opacity 0.2s ease;
 }
 
-.home-about-me-heading {
-  margin-top: -100px;
-}
 
 .home-about-section {
   display: flex;
   align-items: stretch;
   gap: 50px;
-  margin-bottom: 120px;
 }
 
 .home-image-placeholder-2 {
@@ -162,18 +149,15 @@
 }
 
 .home-about-text p {
-  margin: 0 0 28px;
   color: #000;
   font-family: $base-font-family;
   font-size: $heading-medium-font-size;
   font-style: $base-font-style;
   font-weight: $heading-medium-font-weight;
   line-height: 1.4;
+  margin-bottom: 28px;
 }
 
-.home-about-text p:last-child {
-  margin-bottom: 2vh;
-}
 
 .home-about-name {
   color: $color-red;
@@ -202,6 +186,10 @@
   z-index: 1;
   height: 40vw;
   margin-bottom: 120px;
+  &:last-of-type,
+  &--last {
+    margin-bottom: 0;
+  }
 }
 
 .home-project-content {
@@ -223,7 +211,6 @@
   font-style: $base-font-style;
   font-weight: $heading-large-font-weight;
   line-height: $base-line-height;
-  margin-bottom: 0; // No margin below title
 }
 
 .home-project-subtitle {
