@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, output} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ButtonComponent {
   readonly label = 'View more';
+  readonly pressed = output<void>();
+
+  onButtonClick(): void {
+    this.pressed.emit();
+  }
 }

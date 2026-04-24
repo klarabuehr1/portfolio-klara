@@ -16,6 +16,22 @@ export class RouterService {
     return this.#router.navigate([ROUTES.projects]);
   }
 
+  navigateToMacroToMicro(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.macroToMicro]);
+  }
+
+  navigateToWocy(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.wocy]);
+  }
+
+  navigateToDryve(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.dryve]);
+  }
+
+  navigateToSalt(): Promise<boolean> {
+    return this.#router.navigate([ROUTES.salt]);
+  }
+
   navigateToAbout(): Promise<boolean> {
     return this.#router.navigate([ROUTES.about]);
   }

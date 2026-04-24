@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {PageContainerComponent} from '../../../shared/page-container-component/page-container-component';
 import {ButtonComponent} from '../../../shared/button-component/button-component';
+import {RouterService} from '../../services/router.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements AfterViewInit {
   contactForm!: FormGroup;
   isSubmitting = false;
   submitMessage = '';
+  private readonly routerService = inject(RouterService);
 
   constructor(private fb: FormBuilder) {
     this.initializeForm();
@@ -107,6 +109,22 @@ export class HomeComponent implements AfterViewInit {
         this.submitMessage = '';
       }, 3000);
     }, 1000);
+  }
+
+  navigateToMacroToMicro(): void {
+    this.routerService.navigateToMacroToMicro();
+  }
+
+  navigateToWocy(): void {
+    this.routerService.navigateToWocy();
+  }
+
+  navigateToDryve(): void {
+    this.routerService.navigateToDryve();
+  }
+
+  navigateToSalt(): void {
+    this.routerService.navigateToSalt();
   }
 }
 
