@@ -22,10 +22,11 @@
   font-style: $base-font-style;
   font-weight: 700;
   line-height: $base-line-height;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color $hover-duration ease, color $hover-duration ease, transform $hover-duration ease;
 
   &:hover {
     background: $color-red;
     color: $white-text-color;
+    transform: scale($hover-button-scale);
   }
 }

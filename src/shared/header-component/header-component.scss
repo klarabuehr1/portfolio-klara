@@ -50,10 +50,22 @@
     font-weight: 500;
     color: black;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease, font-weight 0.2s ease;
+
+    // Reserves the bold width so layout doesn't shift on hover
+    &::after {
+      display: block;
+      content: attr(data-text);
+      font-weight: 700;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
     &:hover {
       color: var(--color-accent, $color-red);
+      font-weight: 700;
     }
   }
 }

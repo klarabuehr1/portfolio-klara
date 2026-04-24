@@ -25,6 +25,23 @@ $heading-large-font-weight: 700;
 $heading-medium-font-size: 24px;
 $heading-medium-font-weight: 400;
 
+// ── Interactive hover effects ─────────────────────────────────────────────────
+$hover-duration: 0.2s;
+$hover-text-font-weight: 700;
+$hover-text-scale: 1.04;
+$hover-button-scale: 1.05;
+
+// Text links: scale up slightly + bolder font on hover
+a {
+  display: inline-block;
+  transition: transform $hover-duration ease, font-weight $hover-duration ease;
+
+  &:hover {
+    transform: scale($hover-text-scale);
+    font-weight: $hover-text-font-weight;
+  }
+}
+
 // ── Text reveal animation ─────────────────────────────────────────────────────
 // Applied automatically by RevealDirective. The directive wraps the host in
 // an overflow:hidden container; the host slides up from below the clip border.

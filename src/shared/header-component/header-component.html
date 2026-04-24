@@ -4,11 +4,11 @@
   </div>
 
   <nav class="header__nav" aria-label="Main navigation">
-    <a class="header__nav-link" (click)="scrollToTop()">Home</a>
+    <a class="header__nav-link" data-text="Home" (click)="scrollToTop()">Home</a>
     <!-- <a class="header__nav-link" (click)="navigateToProjects()">Projects</a> -->
-    <a class="header__nav-link" (click)="scrollToSection('about')">About</a>
+    <a class="header__nav-link" data-text="About" (click)="scrollToSection('about')">About</a>
     <!-- <a class="header__nav-link" (click)="navigateToCV()">CV</a> -->
-    <a class="header__nav-link" (click)="scrollToSection('contact')">Contact</a>
+    <a class="header__nav-link" data-text="Contact" (click)="scrollToSection('contact')">Contact</a>
     <!-- <a class="header__nav-link" (click)="navigateToSettings()">Settings</a> -->
   </nav>
 </header>

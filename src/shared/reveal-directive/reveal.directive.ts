@@ -43,6 +43,10 @@ export class RevealDirective implements OnInit, OnDestroy {
       ([entry]) => {
         if (entry.isIntersecting) {
           this.renderer.addClass(host, 'reveal-content--visible');
+          // After the animation completes, open overflow so hover scaling isn't clipped
+          host.addEventListener('transitionend', () => {
+            this.renderer.setStyle(wrapper, 'overflow', 'visible');
+          }, {once: true});
           this.observer?.disconnect();
         }
       },
