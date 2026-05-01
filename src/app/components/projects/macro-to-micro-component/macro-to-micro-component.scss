@@ -63,3 +63,99 @@
     will-change: transform;
   }
 }
+
+// ── Tags ──────────────────────────────────────────────────────────────────────
+.macro-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+
+  &__tag {
+    border: 1.5px solid $border-color;
+    border-radius: 999px;
+    padding: 6px 18px;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    color: $text-color;
+    white-space: nowrap;
+  }
+}
+
+// ── Overview ─────────────────────────────────────────────────────────────────
+.macro-overview {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-top: 180px;
+  align-items: start;
+
+  &__heading {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+    line-height: 1;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
+
+// ── Info cards ───────────────────────────────────────────────────────────────
+.macro-info-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 180px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.macro-info-card {
+  border: 1.5px solid $border-color;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+    letter-spacing: 0.5px;
+  }
+
+  &__content {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.7;
+    color: $text-color;
+  }
+}

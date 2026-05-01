@@ -1,9 +1,10 @@
 import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {PageContainerComponent} from '../../../../shared/page-container-component/page-container-component';
+import {RevealDirective} from '../../../../shared/reveal-directive/reveal.directive';
 
 @Component({
   selector: 'app-macro-to-micro-component',
-  imports: [PageContainerComponent],
+  imports: [PageContainerComponent, RevealDirective],
   templateUrl: './macro-to-micro-component.html',
   styleUrl: './macro-to-micro-component.scss',
 })
@@ -47,12 +48,11 @@ export class MacroToMicroComponent implements AfterViewInit {
     const scrolled = -container.getBoundingClientRect().top;
     const progress = Math.max(0, Math.min(1, scrolled / this.HERO_ANIMATION_SCROLL_DISTANCE));
 
-    // Phase 1: title slides up out of clip (progress 0 → 0.6)
-    const titleProgress = Math.min(1, progress / 0.6);
-    title.style.transform = `translateY(${-titleProgress * title.offsetHeight}px)`;
+    // Title slides up to make room for subtitle
+    const subtitleHeight = subtitle.offsetHeight + 8;
+    title.style.transform = `translateY(${-progress * subtitleHeight}px)`;
 
-    // Phase 2: subtitle slides up into clip (progress 0.6 → 1)
-    const subtitleProgress = Math.max(0, (progress - 0.6) / 0.4);
-    subtitle.style.transform = `translateY(${(1 - subtitleProgress) * 110}%)`;
+    // Subtitle slides up at the same time
+    subtitle.style.transform = `translateY(${(1 - progress) * 110}%)`;
   }
 }

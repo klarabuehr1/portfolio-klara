@@ -12,4 +12,42 @@
       </div>
     </div>
   </div>
+
+  <div class="macro-tags">
+    <span class="macro-tags__tag">UI/UX</span>
+    <span class="macro-tags__tag">Exhibition design</span>
+    <span class="macro-tags__tag">Interactive</span>
+    <span class="macro-tags__tag">Game</span>
+    <span class="macro-tags__tag">Microplastic</span>
+  </div>
+
+  <section class="macro-overview">
+    <h2 class="macro-overview__heading" appReveal>OVERVIEW</h2>
+    <p class="macro-overview__text" appReveal [appRevealDelay]="100">Macro to Micro is an <strong>interactive board game</strong> where players navigate a <strong>map</strong> using everyday objects as sources of microplastics (car tires, shampoo, clothing, plastic bottles).<br>
+      Each step reveals the journey through <strong>animations</strong> and additional information. Designed as a <strong>multi-player</strong> experience, the game combines learning with competition through <strong>quiz-based</strong> interactions.</p>
+  </section>
+
+  <div class="macro-info-cards">
+    <div class="macro-info-card" appReveal>
+      <img class="macro-info-card__icon" src="assets/icons/Duration.svg" alt="Duration">
+      <h3 class="macro-info-card__title">DURATION</h3>
+      <p class="macro-info-card__content">1 semester<br>03 - 08/2025</p>
+    </div>
+    <div class="macro-info-card" appReveal [appRevealDelay]="100">
+      <img class="macro-info-card__icon" src="assets/icons/Team.svg" alt="Team">
+      <h3 class="macro-info-card__title">TEAM</h3>
+      <p class="macro-info-card__content">Klara Bühr<br>Sarah Teller<br>Youngin Choi</p>
+    </div>
+    <div class="macro-info-card" appReveal [appRevealDelay]="200">
+      <img class="macro-info-card__icon" src="assets/icons/my responsibilities.svg" alt="My Responsibilities">
+      <h3 class="macro-info-card__title">MY RESPONSIBILITIES</h3>
+      <p class="macro-info-card__content">Topic Definition<br>Research<br>Concept<br>Interaction Flow<br>Prototyping<br>Implementation<br>Documentation</p>
+    </div>
+    <div class="macro-info-card" appReveal [appRevealDelay]="300">
+      <img class="macro-info-card__icon" src="assets/icons/tools.svg" alt="Tools">
+      <h3 class="macro-info-card__title">TOOLS</h3>
+      <p class="macro-info-card__content">Figma<br>Illustrator<br>After Effects<br>ProtoPie<br>Arduino</p>
+    </div>
+  </div>
+
 </app-page-container>
