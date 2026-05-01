@@ -110,7 +110,63 @@
   }
 }
 
-// ── Info cards ───────────────────────────────────────────────────────────────
+// ── Process section ───────────────────────────────────────────────────────────
+.macro-process {
+  margin-top: 120px;
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  background-color: white;
+  padding: 80px var(--page-padding-x);
+
+  &__heading {
+    margin: 0 0 48px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__step-title {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #D9D9D9;
+    border-radius: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
 .macro-info-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
