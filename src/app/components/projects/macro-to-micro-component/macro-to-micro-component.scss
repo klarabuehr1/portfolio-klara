@@ -72,7 +72,7 @@
   margin-top: 32px;
 
   &__tag {
-    border: 1.5px solid $border-color;
+    border: 2px solid $border-color;
     border-radius: 999px;
     padding: 6px 18px;
     font-family: $base-font-family;
@@ -88,7 +88,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
-  margin-top: 180px;
+  margin-top: 120px;
   align-items: start;
 
   &__heading {
@@ -101,7 +101,7 @@
   }
 
   &__text {
-    margin: 0;
+    margin-top: 12px;
     font-family: $base-font-family;
     font-size: $heading-medium-font-size;
     font-weight: $heading-medium-font-weight;
@@ -114,8 +114,9 @@
 .macro-info-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
   gap: 24px;
-  margin-top: 180px;
+  margin-top: 120px;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -127,9 +128,11 @@
 }
 
 .macro-info-card {
-  border: 1.5px solid $border-color;
+  border: 2px solid $border-color;
   border-radius: 16px;
   padding: 32px 24px;
+  height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
