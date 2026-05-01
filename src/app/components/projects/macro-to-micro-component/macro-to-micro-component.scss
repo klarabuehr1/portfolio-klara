@@ -110,7 +110,73 @@
   }
 }
 
-// ── Process section ───────────────────────────────────────────────────────────
+// ── Final Outcome ─────────────────────────────────────────────────────────────
+.macro-outcome {
+  margin-top: 80px;
+
+  &__heading {
+    margin: 0 0 48px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #D9D9D9;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  &__video-label {
+    font-family: $base-font-family;
+    font-size: 32px;
+    font-weight: 400;
+    color: #999;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 48px;
+
+    &--reversed {
+      direction: rtl;
+
+      > * {
+        direction: ltr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #D9D9D9;
+    border-radius: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
 .macro-process {
   margin-top: 120px;
   margin-left: calc(-1 * var(--page-padding-x));
@@ -218,3 +284,4 @@
     color: $text-color;
   }
 }
+
