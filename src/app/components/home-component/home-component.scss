@@ -121,9 +121,9 @@
   width: 60vw;
   height: 40vw;
   margin-left: calc(-1 * var(--page-padding-x));
-  background-color: rgb(73, 73, 73);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  object-fit: cover;
 }
 
 .home-image-placeholder-2-right-aligned {
