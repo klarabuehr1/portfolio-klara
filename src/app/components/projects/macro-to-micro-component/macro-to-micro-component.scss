@@ -1,0 +1,65 @@
+@use '../../../../shared/shared-styles.scss' as *;
+
+.macro-hero {
+  position: relative;
+  margin-top: calc(-1 * var(--header-height));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  height: calc(100vh + 400px);
+
+  &__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__copy {
+    position: absolute;
+    bottom: var(--page-padding-x);
+    left: var(--page-padding-x);
+    width: 40%;
+  }
+
+  &__title-clip {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__title {
+    margin: 0;
+    color: $white-text-color;
+    font-family: $base-font-family;
+    font-size: 60px;
+    font-style: $base-font-style;
+    font-weight: 900;
+    letter-spacing: 1.92px;
+    line-height: $base-line-height;
+    will-change: transform;
+  }
+
+  &__subtitle-clip {
+    overflow: hidden;
+  }
+
+  &__subtitle {
+    margin: 8px 0 0;
+    color: $white-text-color;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-style: $base-font-style;
+    font-weight: $heading-medium-font-weight;
+    line-height: $base-line-height;
+    transform: translateY(110%);
+    will-change: transform;
+  }
+}

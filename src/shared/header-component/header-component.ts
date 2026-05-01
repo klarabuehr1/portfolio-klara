@@ -36,24 +36,19 @@ export class HeaderComponent {
   @HostListener('window:scroll')
   @HostListener('window:resize')
   protected updateNavLinkContrast(): void {
-    if (!this.isOnHomeRoute()) {
+    const hero = document.querySelector('.home-image-placeholder, .hero-full-bleed') as HTMLElement | null;
+    if (!hero) {
       this.useLightNavLinks = false;
       return;
     }
 
-    const heroPlaceholder = document.querySelector('.home-image-placeholder') as HTMLElement | null;
-    if (!heroPlaceholder) {
-      this.useLightNavLinks = false;
-      return;
-    }
-
-    const placeholderRect = heroPlaceholder.getBoundingClientRect();
+    const heroRect = hero.getBoundingClientRect();
     const headerBottom = this.headerElement?.nativeElement.getBoundingClientRect().bottom ?? 64;
 
-    this.useLightNavLinks = placeholderRect.top < headerBottom && placeholderRect.bottom > 0;
+    this.useLightNavLinks = heroRect.top < headerBottom && heroRect.bottom > 0;
   }
 
-  private isOnHomeRoute(): boolean {
+  protected isOnHomeRoute(): boolean {
     return this.router.url === '/' || this.router.url.startsWith('/home');
   }
 
