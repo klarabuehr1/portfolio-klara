@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild, inject} from '@angular/core';
 import {PageContainerComponent} from '../../../../shared/page-container-component/page-container-component';
 import {RevealDirective} from '../../../../shared/reveal-directive/reveal.directive';
+import {RouterService} from '../../../services/router.service';
 
 @Component({
   selector: 'app-macro-to-micro-component',
@@ -12,6 +13,8 @@ export class MacroToMicroComponent implements AfterViewInit {
   @ViewChild('heroScrollContainer') heroScrollContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('heroTitle') heroTitle!: ElementRef<HTMLElement>;
   @ViewChild('heroSubtitle') heroSubtitle!: ElementRef<HTMLElement>;
+
+  private readonly routerService = inject(RouterService);
 
   private heroTitleRevealed = false;
   private readonly HERO_ANIMATION_SCROLL_DISTANCE = 400;
@@ -55,4 +58,8 @@ export class MacroToMicroComponent implements AfterViewInit {
     // Subtitle slides up at the same time
     subtitle.style.transform = `translateY(${(1 - progress) * 110}%)`;
   }
+
+  protected navigateToWocy(): void { this.routerService.navigateToWocy(); }
+  protected navigateToDryve(): void { this.routerService.navigateToDryve(); }
+  protected navigateToSalt(): void { this.routerService.navigateToSalt(); }
 }

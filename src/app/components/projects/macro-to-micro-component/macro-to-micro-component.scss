@@ -1,5 +1,53 @@
 @use '../../../../shared/shared-styles.scss' as *;
 
+// ── Other Projects ────────────────────────────────────────────────────────────
+.macro-other-projects {
+  margin-top: 80px;
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  background-color: $color-red;
+  padding: 48px var(--page-padding-x) 64px;
+
+  &__heading {
+    margin: 0 0 40px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $white-text-color;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: $white-text-color;
+    border-radius: 16px;
+  }
+
+  &__label {
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $white-text-color;
+  }
+}
+
 .macro-hero {
   position: relative;
   margin-top: calc(-1 * var(--header-height));
