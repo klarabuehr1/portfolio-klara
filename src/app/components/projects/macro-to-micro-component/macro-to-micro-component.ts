@@ -27,8 +27,10 @@ export class MacroToMicroComponent implements AfterViewInit {
     const title = this.heroTitle?.nativeElement;
     if (!title) return;
 
+    // Set starting position without transition so browser paints it first
     title.style.transform = 'translateY(110%)';
 
+    // Give the browser one full frame to render the start state, then animate
     setTimeout(() => {
       title.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
       title.style.transform = 'translateY(0)';
@@ -51,12 +53,13 @@ export class MacroToMicroComponent implements AfterViewInit {
     const scrolled = -container.getBoundingClientRect().top;
     const progress = Math.max(0, Math.min(1, scrolled / this.HERO_ANIMATION_SCROLL_DISTANCE));
 
-    // Title slides up to make room for subtitle
-    const subtitleHeight = subtitle.offsetHeight + 8;
-    title.style.transform = `translateY(${-progress * subtitleHeight}px)`;
+    // Phase 1: title slides up out of clip container (progress 0 → 0.6)
+    const titleProgress = Math.min(1, progress / 0.6);
+    title.style.transform = `translateY(${-titleProgress * title.offsetHeight}px)`;
 
-    // Subtitle slides up at the same time
-    subtitle.style.transform = `translateY(${(1 - progress) * 110}%)`;
+    // Phase 2: subtitle slides up into clip container (progress 0.6 → 1)
+    const subtitleProgress = Math.max(0, (progress - 0.6) / 0.4);
+    subtitle.style.transform = `translateY(${(1 - subtitleProgress) * 110}%)`;
   }
 
   protected navigateToWocy(): void { this.routerService.navigateToWocy(); }
