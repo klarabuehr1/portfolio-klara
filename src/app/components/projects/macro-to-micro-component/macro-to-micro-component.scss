@@ -195,25 +195,20 @@
     align-items: center;
     margin-bottom: 48px;
 
-    &--reversed {
-      direction: rtl;
-
-      > * {
-        direction: ltr;
-      }
-    }
-
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      direction: ltr;
     }
   }
 
-  &__image-placeholder {
+  &__image {
     width: 100%;
     aspect-ratio: 4 / 3;
     background-color: #D9D9D9;
     border-radius: 16px;
+  }
+
+  &__image-placeholder {
+    display: none;
   }
 
   &__text {
