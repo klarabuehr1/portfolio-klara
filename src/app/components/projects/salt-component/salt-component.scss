@@ -1,0 +1,321 @@
+@use '../../../../shared/shared-styles.scss' as *;
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
+.salt-hero {
+  position: relative;
+  margin-top: calc(-1 * var(--header-height));
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  height: 100vh;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+    pointer-events: none;
+  }
+
+  &__copy {
+    position: absolute;
+    bottom: calc(var(--page-padding-x) - 20px);
+    left: var(--page-padding-x);
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 0;
+    color: $white-text-color;
+    font-family: $base-font-family;
+    font-size: 60px;
+    font-style: $base-font-style;
+    font-weight: 900;
+    letter-spacing: 1.92px;
+    line-height: $base-line-height;
+  }
+}
+
+// ── Tags ──────────────────────────────────────────────────────────────────────
+.salt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+
+  &__tag {
+    border: 2px solid $border-color;
+    border-radius: 999px;
+    padding: 6px 18px;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    color: $text-color;
+    white-space: nowrap;
+  }
+}
+
+// ── Overview ──────────────────────────────────────────────────────────────────
+.salt-overview {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-top: 120px;
+  align-items: start;
+
+  &__heading {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+    line-height: 1;
+  }
+
+  &__text {
+    margin-top: 12px;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
+
+// ── Info Cards ────────────────────────────────────────────────────────────────
+.salt-info-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 120px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.salt-info-card {
+  border: 2px solid $border-color;
+  border-radius: 16px;
+  padding: 32px 24px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+    letter-spacing: 0.5px;
+  }
+
+  &__content {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.7;
+    color: $text-color;
+  }
+}
+
+// ── Process ───────────────────────────────────────────────────────────────────
+.salt-process {
+  margin-top: 120px;
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  background-color: white;
+  padding: 80px var(--page-padding-x);
+
+  &__heading {
+    margin: 0 0 48px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__step-title {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #D9D9D9;
+    border-radius: 16px;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
+
+// ── Final Outcome ─────────────────────────────────────────────────────────────
+.salt-outcome {
+  margin-top: 80px;
+
+  &__heading {
+    margin: 0 0 48px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $color-red;
+  }
+
+  &__video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 48px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #D9D9D9;
+    border-radius: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-medium-font-weight;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
+
+// ── Other Projects ────────────────────────────────────────────────────────────
+.salt-other-projects {
+  margin-top: 80px;
+  margin-left: calc(-1 * var(--page-padding-x));
+  margin-right: calc(-1 * var(--page-padding-x));
+  margin-bottom: calc(-1 * var(--header-height));
+  background-color: $color-red;
+  padding: 48px var(--page-padding-x) 64px;
+
+  &__heading {
+    margin: 0 0 40px;
+    font-family: $base-font-family;
+    font-size: $heading-large-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $white-text-color;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: $white-text-color;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform $hover-duration ease;
+  }
+
+  &__card:hover &__image-placeholder {
+    transform: scale($hover-button-scale);
+  }
+
+  &__label {
+    font-family: $base-font-family;
+    font-size: $heading-medium-font-size;
+    font-weight: $heading-large-font-weight;
+    color: $white-text-color;
+  }
+}

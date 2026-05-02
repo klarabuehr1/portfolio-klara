@@ -1,3 +1,114 @@
 <app-page-container>
-  <h1 class="shared-page-title">Salt</h1>
+  <div class="salt-hero hero-full-bleed">
+    <img class="salt-hero__image" src="assets/images/salt-thumbnail.png" alt="SALT.">
+    <div class="salt-hero__copy">
+      <h1 class="salt-hero__title" appReveal>SALT.</h1>
+    </div>
+  </div>
+
+  <div class="salt-tags">
+    <span class="salt-tags__tag">Tag 1</span>
+    <span class="salt-tags__tag">Tag 2</span>
+    <span class="salt-tags__tag">Tag 3</span>
+  </div>
+
+  <section class="salt-overview">
+    <h2 class="salt-overview__heading" appReveal>OVERVIEW</h2>
+    <p class="salt-overview__text" appReveal [appRevealDelay]="100">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+  </section>
+
+  <div class="salt-info-cards">
+    <div class="salt-info-card" appReveal>
+      <img class="salt-info-card__icon" src="assets/icons/Duration.svg" alt="Duration">
+      <h3 class="salt-info-card__title">DURATION</h3>
+      <p class="salt-info-card__content">1 semester<br>MM - MM/YYYY</p>
+    </div>
+    <div class="salt-info-card" appReveal [appRevealDelay]="100">
+      <img class="salt-info-card__icon" src="assets/icons/Team.svg" alt="Team">
+      <h3 class="salt-info-card__title">TEAM</h3>
+      <p class="salt-info-card__content">Name 1<br>Name 2</p>
+    </div>
+    <div class="salt-info-card" appReveal [appRevealDelay]="200">
+      <img class="salt-info-card__icon" src="assets/icons/my responsibilities.svg" alt="My Responsibilities">
+      <h3 class="salt-info-card__title">MY RESPONSIBILITIES</h3>
+      <p class="salt-info-card__content">Responsibility 1<br>Responsibility 2<br>Responsibility 3</p>
+    </div>
+    <div class="salt-info-card" appReveal [appRevealDelay]="300">
+      <img class="salt-info-card__icon" src="assets/icons/tools.svg" alt="Tools">
+      <h3 class="salt-info-card__title">TOOLS</h3>
+      <p class="salt-info-card__content">Tool 1<br>Tool 2<br>Tool 3</p>
+    </div>
+  </div>
+
+  <section class="salt-process">
+    <div class="salt-process__inner">
+      <h2 class="salt-process__heading" appReveal>PROCESS</h2>
+      <div class="salt-process__columns">
+        <div class="salt-process__column" appReveal>
+          <h3 class="salt-process__step-title">01 Step</h3>
+          <div class="salt-process__image-placeholder"></div>
+          <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+        <div class="salt-process__column" appReveal [appRevealDelay]="100">
+          <h3 class="salt-process__step-title">02 Step</h3>
+          <div class="salt-process__image-placeholder"></div>
+          <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+        <div class="salt-process__column" appReveal [appRevealDelay]="200">
+          <h3 class="salt-process__step-title">03 Step</h3>
+          <div class="salt-process__image-placeholder"></div>
+          <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="salt-outcome">
+    <h2 class="salt-outcome__heading" appReveal>FINAL OUTCOME</h2>
+
+    <div class="salt-outcome__video-wrapper" appReveal>
+      <iframe
+        class="salt-outcome__video"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="SALT."
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="salt-outcome__row" appReveal>
+      <div class="salt-outcome__image"></div>
+      <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </div>
+
+    <div class="salt-outcome__row salt-outcome__row--reversed" appReveal>
+      <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+      <div class="salt-outcome__image"></div>
+    </div>
+
+    <div class="salt-outcome__row" appReveal>
+      <div class="salt-outcome__image"></div>
+      <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </div>
+  </section>
+
+  <section class="salt-other-projects">
+    <h2 class="salt-other-projects__heading" appReveal>OTHER PROJECTS</h2>
+    <div class="salt-other-projects__grid">
+      <div class="salt-other-projects__card" role="button" (click)="navigateToMacroToMicro()" appReveal>
+        <div class="salt-other-projects__image-placeholder"></div>
+        <span class="salt-other-projects__label">MACRO TO MICRO</span>
+      </div>
+      <div class="salt-other-projects__card" role="button" (click)="navigateToWocy()" appReveal [appRevealDelay]="100">
+        <div class="salt-other-projects__image-placeholder"></div>
+        <span class="salt-other-projects__label">WOCY</span>
+      </div>
+      <div class="salt-other-projects__card" role="button" (click)="navigateToDryve()" appReveal [appRevealDelay]="200">
+        <div class="salt-other-projects__image-placeholder"></div>
+        <span class="salt-other-projects__label">DRYVE</span>
+      </div>
+    </div>
+  </section>
+
 </app-page-container>
