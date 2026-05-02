@@ -1,3 +1,114 @@
 <app-page-container>
-  <h1 class="shared-page-title">Dryve</h1>
+  <div class="dryve-hero hero-full-bleed">
+    <img class="dryve-hero__image" src="assets/images/dryve-thumbnail.png" alt="DRYVE">
+    <div class="dryve-hero__copy">
+      <h1 class="dryve-hero__title" appReveal>DRYVE</h1>
+    </div>
+  </div>
+
+  <div class="dryve-tags">
+    <span class="dryve-tags__tag">Tag 1</span>
+    <span class="dryve-tags__tag">Tag 2</span>
+    <span class="dryve-tags__tag">Tag 3</span>
+  </div>
+
+  <section class="dryve-overview">
+    <h2 class="dryve-overview__heading" appReveal>OVERVIEW</h2>
+    <p class="dryve-overview__text" appReveal [appRevealDelay]="100">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+  </section>
+
+  <div class="dryve-info-cards">
+    <div class="dryve-info-card" appReveal>
+      <img class="dryve-info-card__icon" src="assets/icons/Duration.svg" alt="Duration">
+      <h3 class="dryve-info-card__title">DURATION</h3>
+      <p class="dryve-info-card__content">1 semester<br>MM - MM/YYYY</p>
+    </div>
+    <div class="dryve-info-card" appReveal [appRevealDelay]="100">
+      <img class="dryve-info-card__icon" src="assets/icons/Team.svg" alt="Team">
+      <h3 class="dryve-info-card__title">TEAM</h3>
+      <p class="dryve-info-card__content">Name 1<br>Name 2</p>
+    </div>
+    <div class="dryve-info-card" appReveal [appRevealDelay]="200">
+      <img class="dryve-info-card__icon" src="assets/icons/my responsibilities.svg" alt="My Responsibilities">
+      <h3 class="dryve-info-card__title">MY RESPONSIBILITIES</h3>
+      <p class="dryve-info-card__content">Responsibility 1<br>Responsibility 2<br>Responsibility 3</p>
+    </div>
+    <div class="dryve-info-card" appReveal [appRevealDelay]="300">
+      <img class="dryve-info-card__icon" src="assets/icons/tools.svg" alt="Tools">
+      <h3 class="dryve-info-card__title">TOOLS</h3>
+      <p class="dryve-info-card__content">Tool 1<br>Tool 2<br>Tool 3</p>
+    </div>
+  </div>
+
+  <section class="dryve-process">
+    <div class="dryve-process__inner">
+      <h2 class="dryve-process__heading" appReveal>PROCESS</h2>
+      <div class="dryve-process__columns">
+        <div class="dryve-process__column" appReveal>
+          <h3 class="dryve-process__step-title">01 Step</h3>
+          <div class="dryve-process__image-placeholder"></div>
+          <p class="dryve-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+        <div class="dryve-process__column" appReveal [appRevealDelay]="100">
+          <h3 class="dryve-process__step-title">02 Step</h3>
+          <div class="dryve-process__image-placeholder"></div>
+          <p class="dryve-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+        <div class="dryve-process__column" appReveal [appRevealDelay]="200">
+          <h3 class="dryve-process__step-title">03 Step</h3>
+          <div class="dryve-process__image-placeholder"></div>
+          <p class="dryve-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dryve-outcome">
+    <h2 class="dryve-outcome__heading" appReveal>FINAL OUTCOME</h2>
+
+    <div class="dryve-outcome__video-wrapper" appReveal>
+      <iframe
+        class="dryve-outcome__video"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="DRYVE"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="dryve-outcome__row" appReveal>
+      <div class="dryve-outcome__image"></div>
+      <p class="dryve-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </div>
+
+    <div class="dryve-outcome__row dryve-outcome__row--reversed" appReveal>
+      <p class="dryve-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+      <div class="dryve-outcome__image"></div>
+    </div>
+
+    <div class="dryve-outcome__row" appReveal>
+      <div class="dryve-outcome__image"></div>
+      <p class="dryve-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </div>
+  </section>
+
+  <section class="dryve-other-projects">
+    <h2 class="dryve-other-projects__heading" appReveal>OTHER PROJECTS</h2>
+    <div class="dryve-other-projects__grid">
+      <div class="dryve-other-projects__card" role="button" (click)="navigateToMacroToMicro()" appReveal>
+        <div class="dryve-other-projects__image-placeholder"></div>
+        <span class="dryve-other-projects__label">MACRO TO MICRO</span>
+      </div>
+      <div class="dryve-other-projects__card" role="button" (click)="navigateToWocy()" appReveal [appRevealDelay]="100">
+        <div class="dryve-other-projects__image-placeholder"></div>
+        <span class="dryve-other-projects__label">WOCY</span>
+      </div>
+      <div class="dryve-other-projects__card" role="button" (click)="navigateToSalt()" appReveal [appRevealDelay]="200">
+        <div class="dryve-other-projects__image-placeholder"></div>
+        <span class="dryve-other-projects__label">SALT.</span>
+      </div>
+    </div>
+  </section>
+
 </app-page-container>
