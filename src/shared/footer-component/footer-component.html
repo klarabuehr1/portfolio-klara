@@ -1,11 +1,11 @@
-<footer class="footer">
+<footer class="footer" [class.footer--project]="isProjectPage()">
   <nav class="footer__nav" aria-label="Footer navigation">
     <a class="footer__nav-link" data-text="Legal Notice" (click)="navigateToImpressum()">Legal Notice</a>
     <a class="footer__nav-link" data-text="Privacy Policy" (click)="navigateToDatenschutz()">Privacy Policy</a>
   </nav>
 
   <div class="footer__copyright">
-    <img src="assets/icons/copyright.svg" alt="Copyright" class="footer__copyright-icon" />
+    <img [src]="isProjectPage() ? 'assets/icons/copyright white.svg' : 'assets/icons/copyright.svg'" alt="Copyright" class="footer__copyright-icon" />
     <span class="footer__copyright-text">{{ currentYear }} by Klara Bühr</span>
   </div>
 </footer>

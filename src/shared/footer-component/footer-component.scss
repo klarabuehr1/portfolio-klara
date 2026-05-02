@@ -11,6 +11,12 @@
   box-sizing: border-box;
   gap: 2rem;
 
+  &--project {
+    background: $color-red;
+    border-top-color: transparent;
+    color: $white-text-color;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
@@ -45,6 +51,10 @@
   &:hover {
     color: $color-red;
     font-weight: 700;
+  }
+
+  .footer--project &:hover {
+    color: $background-color;
   }
 
   &:active {

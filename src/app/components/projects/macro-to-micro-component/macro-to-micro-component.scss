@@ -39,6 +39,12 @@
     aspect-ratio: 4 / 3;
     background-color: $white-text-color;
     border-radius: 16px;
+    overflow: hidden;
+    transition: transform $hover-duration ease;
+  }
+
+  &__card:hover &__image-placeholder {
+    transform: scale($hover-button-scale);
   }
 
   &__label {
@@ -54,13 +60,7 @@
   margin-top: calc(-1 * var(--header-height));
   margin-left: calc(-1 * var(--page-padding-x));
   margin-right: calc(-1 * var(--page-padding-x));
-  height: calc(100vh + 400px);
-
-  &__sticky {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
+  height: 100vh;
 
   &__image {
     position: absolute;
@@ -70,18 +70,19 @@
     object-fit: cover;
   }
 
-  &__copy {
+  &::after {
+    content: '';
     position: absolute;
-    bottom: var(--page-padding-x);
-    left: var(--page-padding-x);
-    width: 40%;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+    pointer-events: none;
   }
 
-  &__title-clip {
-    overflow: hidden;
+  &__copy {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: calc(var(--page-padding-x) - 20px);
+    left: var(--page-padding-x);
+    z-index: 1;
   }
 
   &__title {
@@ -93,23 +94,6 @@
     font-weight: 900;
     letter-spacing: 1.92px;
     line-height: $base-line-height;
-    will-change: transform;
-  }
-
-  &__subtitle-clip {
-    overflow: hidden;
-  }
-
-  &__subtitle {
-    margin: 8px 0 0;
-    color: $white-text-color;
-    font-family: $base-font-family;
-    font-size: $heading-medium-font-size;
-    font-style: $base-font-style;
-    font-weight: $heading-medium-font-weight;
-    line-height: $base-line-height;
-    transform: translateY(110%);
-    will-change: transform;
   }
 }
 
