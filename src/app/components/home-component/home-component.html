@@ -54,7 +54,15 @@
         <img #aboutMeHeading class="home-projects-heading home-about-me-heading" src="assets/svg/About me.svg" alt="About me">
       </div>
   <div class="home-about-section">
-    <div class="home-about-image-placeholder"></div>
+    <div class="home-about-slideshow">
+      @for (img of aboutImages; track img; let i = $index) {
+        <img
+          class="home-about-slideshow__img"
+          [class.home-about-slideshow__img--active]="i === currentAboutImageIndex()"
+          [src]="img"
+          alt="About me">
+      }
+    </div>
     <div class="home-about-content">
       <div class="home-about-text">
         <p appReveal>Hey I'm <span class="home-about-name">KLARA</span></p>

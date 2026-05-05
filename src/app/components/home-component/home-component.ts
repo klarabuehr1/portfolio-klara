@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild, inject} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild, inject, signal} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {PageContainerComponent} from '../../../shared/page-container-component/page-container-component';
@@ -12,7 +12,7 @@ import {RevealDirective} from '../../../shared/reveal-directive/reveal.directive
   templateUrl: './home-component.html',
   styleUrl: './home-component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('projectsHeading') projectsHeading!: ElementRef<HTMLImageElement>;
   @ViewChild('aboutMeHeading') aboutMeHeading!: ElementRef<HTMLImageElement>;
   @ViewChild('letsWorkTogetherHeading') letsWorkTogetherHeading!: ElementRef<HTMLImageElement>;
@@ -25,6 +25,18 @@ export class HomeComponent implements AfterViewInit {
   submitMessage = '';
   private readonly routerService = inject(RouterService);
   private heroTitleRevealed = false;
+
+  readonly aboutImages = [
+    'assets/About%20me%20Pictures/FC212C0B-2B2F-4331-84BD-8BD0C8EE3423_1_105_c.jpeg',
+    'assets/About%20me%20Pictures/JiL1.jpeg',
+    'assets/About%20me%20Pictures/JiL2.jpeg',
+    'assets/About%20me%20Pictures/Me1.jpeg',
+    'assets/About%20me%20Pictures/drawing1.jpeg',
+    'assets/About%20me%20Pictures/nature1.jpeg',
+    'assets/About%20me%20Pictures/soccer.jpeg',
+  ];
+  readonly currentAboutImageIndex = signal(0);
+  private slideshowInterval: ReturnType<typeof setInterval> | null = null;
 
   constructor(private fb: FormBuilder) {
     this.initializeForm();
@@ -43,6 +55,7 @@ export class HomeComponent implements AfterViewInit {
     this.revealHeroTitle();
     this.updateWidth();
     setTimeout(() => this.updateWidth(), 100);
+    this.startSlideshow();
   }
 
   private revealHeroTitle(): void {
@@ -128,6 +141,18 @@ export class HomeComponent implements AfterViewInit {
         this.submitMessage = '';
       }, 3000);
     }, 1000);
+  }
+
+  private startSlideshow(): void {
+    this.slideshowInterval = setInterval(() => {
+      this.currentAboutImageIndex.update(i => (i + 1) % this.aboutImages.length);
+    }, 3000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.slideshowInterval) {
+      clearInterval(this.slideshowInterval);
+    }
   }
 
   navigateToMacroToMicro(): void {
