@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use 'shared/shared-styles';
+@use 'shared/shared-styles' as *;
 
 @font-face {
   font-family: 'Satoshi';
@@ -28,7 +28,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Satoshi', sans-serif;
-  background: #FFF8F1;
+  background: $background-color;
   cursor: none;
 }
 
