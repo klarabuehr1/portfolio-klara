@@ -228,9 +228,17 @@
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
+    background-color: #D9D9D9;
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 48px;
+  }
+
+  &__video-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   &__video {
@@ -258,6 +266,11 @@
     aspect-ratio: 3 / 2;
     background-color: #D9D9D9;
     border-radius: 16px;
+
+    &--right {
+      object-fit: cover;
+      object-position: right center;
+    }
   }
 
   &__text {
