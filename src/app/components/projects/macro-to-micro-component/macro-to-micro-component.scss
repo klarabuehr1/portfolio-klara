@@ -202,6 +202,10 @@
       object-fit: unset;
       background-color: #F6E2D7;
     }
+
+    &--video {
+      object-fit: cover;
+    }
   }
 
   &__stack-item {
