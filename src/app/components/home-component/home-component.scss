@@ -63,6 +63,7 @@
 
 .home-projects-heading-container {
   position: relative;
+  margin-top: 120px;
   height: calc((100vw - 2 * var(--page-padding-x)) * 366 / 1362 + 120px);
 
   @media (max-width: 768px) {
@@ -88,6 +89,7 @@
 
 .home-lets-work-together-container {
   position: relative;
+  margin-top: 120px;
   height: calc((100vw - 2 * var(--page-padding-x)) * 173 / 1361 + 120px);
 
   @media (max-width: 768px) {
