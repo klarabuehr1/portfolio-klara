@@ -191,6 +191,10 @@
     border-radius: 16px;
     object-fit: cover;
     object-position: left center;
+
+    &--fit-width {
+      object-position: center;
+    }
   }
 
   &__image {
