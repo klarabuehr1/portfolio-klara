@@ -15,7 +15,7 @@
 
   <section class="salt-overview">
     <h2 class="salt-overview__heading" appReveal>OVERVIEW</h2>
-    <p class="salt-overview__text" appReveal [appRevealDelay]="100">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    <p class="salt-overview__text" appReveal [appRevealDelay]="100">Salt was created during a one-week mechatronics workshop. The task was to recreate a <strong>simple everyday action</strong> and give the prototype a sense of character. <br>We chose to mechatronically recreate grinding salt with a <strong>salt mill</strong>, focusing on <strong>imitating the human</strong> grip and twisting motion.</p>
   </section>
 
   <div class="salt-info-cards">
@@ -47,17 +47,20 @@
       <div class="salt-process__columns">
         <div class="salt-process__column" appReveal>
           <h3 class="salt-process__step-title">01 Step</h3>
-          <div class="salt-process__image-placeholder"></div>
+          <div class="salt-process__image-pair">
+            <img class="salt-process__image-half" src="assets/Salt./Skizzen%201.png" alt="Skizzen 1">
+            <img class="salt-process__image-half" src="assets/Salt./Skizzen%202.png" alt="Skizzen 2">
+          </div>
           <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
         </div>
         <div class="salt-process__column" appReveal [appRevealDelay]="100">
           <h3 class="salt-process__step-title">02 Step</h3>
-          <div class="salt-process__image-placeholder"></div>
+          <img class="salt-process__image" src="assets/Salt./Paper%20Prototype.jpeg" alt="Paper Prototype">
           <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
         </div>
         <div class="salt-process__column" appReveal [appRevealDelay]="200">
           <h3 class="salt-process__step-title">03 Step</h3>
-          <div class="salt-process__image-placeholder"></div>
+          <img class="salt-process__image" src="assets/Salt./Implementation.png" alt="Implementation">
           <p class="salt-process__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
         </div>
       </div>
@@ -70,7 +73,7 @@
     <div class="salt-outcome__video-wrapper" appReveal>
       <iframe
         class="salt-outcome__video"
-        src="https://www.youtube.com/embed/VIDEO_ID"
+        src="https://www.youtube.com/embed/6xXzGeT6_pc"
         title="SALT."
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -79,17 +82,17 @@
     </div>
 
     <div class="salt-outcome__row" appReveal>
-      <div class="salt-outcome__image"></div>
+      <img class="salt-outcome__image" src="assets/Salt./final%20outcome.jpg" alt="Final Outcome">
       <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
     </div>
 
     <div class="salt-outcome__row salt-outcome__row--reversed" appReveal>
       <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-      <div class="salt-outcome__image"></div>
+      <img class="salt-outcome__image" src="assets/Salt./Technik.jpg" alt="Technik">
     </div>
 
     <div class="salt-outcome__row" appReveal>
-      <div class="salt-outcome__image"></div>
+      <img class="salt-outcome__image" src="assets/Salt./Ausstellung.png" alt="Ausstellung">
       <p class="salt-outcome__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
     </div>
   </section>
