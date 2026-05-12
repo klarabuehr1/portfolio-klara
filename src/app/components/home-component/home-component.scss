@@ -140,11 +140,9 @@
 
 .home-about-slideshow {
   position: relative;
-  width: 60vw;
-  height: 40vw;
-  margin-left: calc(-1 * var(--page-padding-x));
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  width: 33vw;
+  height: 45vw;
+  border-radius: 15px;
   overflow: hidden;
   flex-shrink: 0;
 
@@ -168,7 +166,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 28px;
-  height: 40vw;
+  height: 45vw;
   flex: 1;
 }
 

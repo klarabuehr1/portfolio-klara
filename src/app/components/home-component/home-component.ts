@@ -27,12 +27,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   private heroTitleRevealed = false;
 
   readonly aboutImages = [
-    'assets/About%20me%20Pictures/FC212C0B-2B2F-4331-84BD-8BD0C8EE3423_1_105_c.jpeg',
     'assets/About%20me%20Pictures/JiL1.jpeg',
-    'assets/About%20me%20Pictures/JiL2.jpeg',
-    'assets/About%20me%20Pictures/Me1.jpeg',
-    'assets/About%20me%20Pictures/drawing1.jpeg',
-    'assets/About%20me%20Pictures/nature1.jpeg',
+    'assets/About%20me%20Pictures/Me.png',
+    'assets/About%20me%20Pictures/drawing1.png',
     'assets/About%20me%20Pictures/soccer.jpeg',
   ];
   readonly currentAboutImageIndex = signal(0);
