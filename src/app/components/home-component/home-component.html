@@ -16,7 +16,9 @@
     <img #projectsHeading class="home-projects-heading" src="assets/svg/Projects.svg" alt="Projects">
   </div>
   <div class="home-projects-section">
-    <img class="home-image-placeholder-2" src="assets/Macro%20to%20Micro%20Pictures%20/Thumbnail.png" alt="Macro to Micro">
+    <div class="home-thumbnail-wrapper" role="button" (click)="navigateToMacroToMicro()">
+      <img class="home-image-placeholder-2" src="assets/Macro%20to%20Micro%20Pictures%20/Thumbnail.png" alt="Macro to Micro">
+    </div>
     <div class="home-project-content">
       <div class="home-project-description" appReveal>MACRO TO MICRO</div>
       <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An interactive exhibit that shows how microplastics enter the human body through various routes.</p>
@@ -30,11 +32,15 @@
       <p class="home-project-subtitle" appReveal [appRevealDelay]="100">A wearable device and an app for tracking and understanding hormonal changes, with a focus on menopause.</p>
       <app-button appReveal [appRevealDelay]="200" (pressed)="navigateToWocy()"></app-button>
     </div>
-    <img class="home-image-placeholder-2-right-aligned" src="assets/Wocy%20Pictures/Thumbnail%20neu.png" alt="WOCY">
+    <div class="home-thumbnail-wrapper home-thumbnail-wrapper--right" role="button" (click)="navigateToWocy()">
+      <img class="home-image-placeholder-2-right-aligned" src="assets/Wocy%20Pictures/Thumbnail%20neu.png" alt="WOCY">
+    </div>
   </div>
 
     <div class="home-projects-section">
-    <img class="home-image-placeholder-2" src="assets/Dryve%20Pictures/Thumbnail%20Dryve.png" alt="DRYVE">
+    <div class="home-thumbnail-wrapper" role="button" (click)="navigateToDryve()">
+      <img class="home-image-placeholder-2" src="assets/Dryve%20Pictures/Thumbnail%20Dryve.png" alt="DRYVE">
+    </div>
     <div class="home-project-content">
       <div class="home-project-description" appReveal>DRYVE</div>
       <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An experimental one-handed controller for a mobile robot, rethinking conventional controller concepts.</p>
@@ -48,7 +54,9 @@
       <p class="home-project-subtitle" appReveal [appRevealDelay]="100">An experimental device designed to operate a salt mill by replicating the imperfect, human motion of seasoning.</p>
       <app-button appReveal [appRevealDelay]="200" (pressed)="navigateToSalt()"></app-button>
     </div>
-    <img class="home-image-placeholder-2-right-aligned" src="assets/Salt./Thumbnail%20Salt.png" alt="SALT." style="object-position: right center;">
+    <div class="home-thumbnail-wrapper home-thumbnail-wrapper--right" role="button" (click)="navigateToSalt()">
+      <img class="home-image-placeholder-2-right-aligned" src="assets/Salt./Thumbnail%20Salt.png" alt="SALT." style="object-position: right center;">
+    </div>
   </div>
       <div id="about" class="home-projects-heading-container">
         <img #aboutMeHeading class="home-projects-heading home-about-me-heading" src="assets/svg/About me.svg" alt="About me">
