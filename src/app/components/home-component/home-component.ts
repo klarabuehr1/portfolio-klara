@@ -25,6 +25,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   submitMessage = '';
   private readonly routerService = inject(RouterService);
   private heroTitleRevealed = false;
+  private svgObserver?: IntersectionObserver;
 
   readonly aboutImages = [
     'assets/About%20me%20Pictures/JiL1.jpeg',
@@ -53,6 +54,34 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.updateWidth();
     setTimeout(() => this.updateWidth(), 100);
     this.startSlideshow();
+    this.initSVGReveal();
+  }
+
+  private initSVGReveal(): void {
+    const headings = [
+      this.projectsHeading?.nativeElement,
+      this.aboutMeHeading?.nativeElement,
+      this.letsWorkTogetherHeading?.nativeElement,
+    ].filter(Boolean) as HTMLImageElement[];
+
+    this.svgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const container = entry.target as HTMLElement;
+            const img = container.querySelector('.home-projects-heading') as HTMLElement | null;
+            if (img) img.classList.add('home-projects-heading--visible');
+            this.svgObserver?.unobserve(container);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    headings.forEach(el => {
+      const container = el.parentElement;
+      if (container) this.svgObserver!.observe(container);
+    });
   }
 
   private revealHeroTitle(): void {
@@ -78,9 +107,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   @HostListener('window:scroll')
   @HostListener('window:resize')
   updateWidth() {
-    this.updateSVGWidth(this.projectsHeading?.nativeElement);
-    this.updateSVGWidth(this.aboutMeHeading?.nativeElement);
-    this.updateSVGWidth(this.letsWorkTogetherHeading?.nativeElement);
     this.updateHeroAnimation();
   }
 
@@ -150,6 +176,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (this.slideshowInterval) {
       clearInterval(this.slideshowInterval);
     }
+    this.svgObserver?.disconnect();
   }
 
   navigateToMacroToMicro(): void {
