@@ -1,9 +1,9 @@
-<header #headerElement class="header" [class.header--light-nav-links]="useLightNavLinks">
-  <div class="header__logo">
-    <div class="header__logo-text">ꓘB</div>
+<header #headerElement class="header">
+  <div #logoElement class="header__logo" [class.header__logo--light]="useLightLogo">
+    <div class="header__logo-text">KB</div>
   </div>
 
-  <nav class="header__nav" aria-label="Main navigation">
+  <nav #navElement class="header__nav" [class.header__nav--light]="useLightNavLinks" aria-label="Main navigation">
     <a class="header__nav-link" data-text="Home" (click)="scrollToTop()">Home</a>
     <!-- <a class="header__nav-link" (click)="navigateToProjects()">Projects</a> -->
     <a class="header__nav-link" data-text="About" (click)="scrollToSection('about')">About</a>

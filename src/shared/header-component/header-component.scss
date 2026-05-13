@@ -32,11 +32,12 @@
   }
 
   &__logo-text {
-    color: $color-red;
-    fill: $color-red;
-    font-size: 14px;
+    color: $text-color;
+    fill: $text-color;
+    font-size: 0.9375rem;
     font-family: sans-serif;
-    font-weight: 700;
+    font-weight: 500;
+    transition: color 0.2s ease;
   }
 
   &__nav {
@@ -48,7 +49,7 @@
   &__nav-link {
     font-size: 0.9375rem;
     font-weight: 500;
-    color: black;
+    color: $text-color;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease, font-weight 0.2s ease;
 
@@ -70,7 +71,12 @@
   }
 }
 
-.header--light-nav-links .header__nav-link {
+.header__logo--light .header__logo-text {
+  color: $white-text-color;
+  fill: $white-text-color;
+}
+
+.header__nav--light .header__nav-link {
   color: $white-text-color;
 
   &:hover {
@@ -78,5 +84,4 @@
     opacity: 0.85;
   }
 }
-
 
