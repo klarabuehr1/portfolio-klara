@@ -19,12 +19,12 @@
   margin-top: 0;
   margin-left: 0;
   color: $white-text-color;
-  font-family: "Satoshi Variable";
-  font-size: 60px;
-  line-height: normal;
+  font-family: $base-font-family;
+  font-size: 7vh;
+  line-height: $base-line-height;
   letter-spacing: 1.92px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: $heading-large-font-weight;
   will-change: transform;
 }
 
