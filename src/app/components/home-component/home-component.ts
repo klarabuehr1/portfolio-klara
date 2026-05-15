@@ -30,7 +30,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   readonly aboutImages = [
     'assets/About%20me%20Pictures/JiL1.jpeg',
     'assets/About%20me%20Pictures/Me.png',
-    'assets/About%20me%20Pictures/drawing1.png',
+    'assets/About%20me%20Pictures/drawing1.jpeg',
     'assets/About%20me%20Pictures/soccer.jpeg',
   ];
   readonly currentAboutImageIndex = signal(0);

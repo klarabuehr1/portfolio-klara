@@ -204,7 +204,7 @@
 }
 
 .home-about-text {
-  max-width: 560px;
+  max-width: 800px;
 }
 
 .home-about-text p {
@@ -225,13 +225,14 @@
 
 .home-about-icons {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 24px;
 }
 
 .home-about-icon {
   display: block;
-  height: 36px;
+  height: 40px;
   width: auto;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
 }
