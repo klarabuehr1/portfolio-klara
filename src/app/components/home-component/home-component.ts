@@ -5,6 +5,13 @@ import {PageContainerComponent} from '../../../shared/page-container-component/p
 import {ButtonComponent} from '../../../shared/button-component/button-component';
 import {RouterService} from '../../services/router.service';
 import {RevealDirective} from '../../../shared/reveal-directive/reveal.directive';
+import emailjs from '@emailjs/browser';
+
+// ── EmailJS configuration ─────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID = 'service_1y8ope7';    // replace with your Service ID
+const EMAILJS_TEMPLATE_ID = 'template_xaj6r9u';  // replace with your Template ID
+const EMAILJS_PUBLIC_KEY = 'k6iUOV9PwN2L1p7Yz';     // replace with your Public Key
+// ─────────────────────────────────────────────────────────────────────────────
 
 @Component({
   selector: 'app-home',
@@ -149,21 +156,24 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.isSubmitting = true;
     const formData = this.contactForm.value;
 
-    // TODO: Replace with EmailJS integration
-    // For now, just log the data to console
-    console.log('Form submitted:', formData);
-
-    // Simulated submission
-    setTimeout(() => {
+    emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        name: `${formData['firstName']} ${formData['lastName']}`,
+        email: formData['email'],
+        message: formData['message'],
+      },
+      EMAILJS_PUBLIC_KEY
+    ).then(() => {
       this.submitMessage = 'Message sent successfully!';
       this.contactForm.reset();
       this.isSubmitting = false;
-
-      // Clear message after 3 seconds
-      setTimeout(() => {
-        this.submitMessage = '';
-      }, 3000);
-    }, 1000);
+      setTimeout(() => { this.submitMessage = ''; }, 3000);
+    }).catch(() => {
+      this.submitMessage = 'Something went wrong. Please try again.';
+      this.isSubmitting = false;
+    });
   }
 
   private startSlideshow(): void {
