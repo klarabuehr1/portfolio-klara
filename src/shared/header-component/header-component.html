@@ -1,5 +1,5 @@
 <header #headerElement class="header">
-  <div #logoElement class="header__logo" [class.header__logo--light]="useLightLogo">
+  <div #logoElement class="header__logo" [class.header__logo--light]="useLightLogo" (click)="scrollToTop()" role="button" aria-label="Go to top">
     <div class="header__logo-text">KB</div>
   </div>
 

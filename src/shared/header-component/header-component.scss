@@ -18,6 +18,16 @@
   &__logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: transform $hover-duration ease;
+
+    &:hover {
+      transform: scale($hover-text-scale);
+    }
+
+    &:hover .header__logo-text {
+      font-weight: 700;
+    }
   }
 
   &__logo-icon {
@@ -37,7 +47,18 @@
     font-size: 0.9375rem;
     font-family: sans-serif;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+
+    // Reserves bold width to prevent layout shift on hover
+    &::after {
+      display: block;
+      content: 'KB';
+      font-weight: 700;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
   }
 
   &__nav {
