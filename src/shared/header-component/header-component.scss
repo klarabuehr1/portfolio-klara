@@ -92,6 +92,11 @@
   }
 }
 
+.header__logo:not(.header__logo--light):hover .header__logo-text {
+  color: $color-red;
+  fill: $color-red;
+}
+
 .header__logo--light .header__logo-text {
   color: $white-text-color;
   fill: $white-text-color;
