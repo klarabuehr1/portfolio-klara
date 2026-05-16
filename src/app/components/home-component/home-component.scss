@@ -4,7 +4,7 @@
 // home-component specific styles
 .hero-scroll-container {
   position: relative;
-  height: calc(50vw + 400px);
+  height: calc(100vh + 400px);
   margin-top: calc(-1 * var(--header-height));
 }
 
@@ -34,8 +34,11 @@
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 50vw;
+  height: 100vh;
   margin-left: calc(-1 * var(--page-padding-x));
+  background-image: url('/assets/Hero%20Bild.png');
+  background-size: cover;
+  background-position: center;
   background-color: rgb(73, 73, 73);
 }
 
